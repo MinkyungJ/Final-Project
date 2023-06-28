@@ -37,7 +37,7 @@
 
 ### **1. 코드 수정 및 Image Push**
 ---
-Git Action은 GitHub 레포지토리의 코드가 수정될 때마다 빌드를 트리거해서 자동으로 각 코드들이 배포되어야할 리소스로 배포합니다. 구현한 CRUD 이미지는 Git Action이 자동으로 만들어둔 ECR(Elastic Container Registry)에 이미지를 Push합니다. 또한, Push된 이미지를 지정한 ECS의 서비스 내에 작업을 생성합니다. <br>
+ Git Action은 GitHub 레포지토리의 코드가 수정될 때마다 빌드를 트리거해서 자동으로 각 코드들이 배포되어야할 리소스로 배포합니다. 구현한 CRUD 이미지는 Git Action이 자동으로 만들어둔 ECR(Elastic Container Registry)에 이미지를 Push합니다. 또한, Push된 이미지를 지정한 ECS의 서비스 내에 작업을 생성합니다. <br>
  뿐만 아니라 로그인요청 처리코드와 로그이벤트 처리코드는 각각의 람다 함수로, 프론트 웹페이지 코드는 s3 버킷으로 배포됩니다.
 
 <br>
@@ -57,14 +57,14 @@ Git Action은 GitHub 레포지토리의 코드가 수정될 때마다 빌드를 
 ### **3. 사용자 인증 과정** 
 ---
 
-API Gateway를 Lambda의 트리거로 연결하여 API 요청을 수신하고 이러한 요청에 대한 정보를 처리를 위해 해당 Lambda 함수에 전달합니다. Lambda + DynamoDB는 인증 계층 역할을 하며, 사용자가 로그인에 성공 시 로그인 요청을 수신하고 자격 증명을 확인하며 해당 데이터를 DynamoDB에 저장하여 성공적인 로그인을 나타냅니다. 잘못된 자격 증명 또는 기타 인증 문제로 인해 사용자가 로그인에 실패하면 Lambda 함수가 요청을 처리하고 인증 실패를 기록합니다. 이 경우 로그인 시도 실패를 나타내므로 데이터가 DynamoDB에 누적되지 않습니다.
+ API Gateway를 Lambda의 트리거로 연결하여 API 요청을 수신하고 이러한 요청에 대한 정보를 처리를 위해 해당 Lambda 함수에 전달합니다. Lambda + DynamoDB는 인증 계층 역할을 하며, 사용자가 로그인에 성공 시 로그인 요청을 수신하고 자격 증명을 확인하며 해당 데이터를 DynamoDB에 저장하여 성공적인 로그인을 나타냅니다. 잘못된 자격 증명 또는 기타 인증 문제로 인해 사용자가 로그인에 실패하면 Lambda 함수가 요청을 처리하고 인증 실패를 기록합니다. 이 경우 로그인 시도 실패를 나타내므로 데이터가 DynamoDB에 누적되지 않습니다.
 
 <br>
 
 ### **4. ALB 및 ASG** 
 ---
 
-사용자 요청은 특정 Virtual Private Cloud(VPC) 경계의 ALB(Application Load Balancer)를 통해 ASG(Auto Scaling Group)에 들어갑니다. ASG는 Public Subnet 내에 위치해 있으며, ASG가 관리하는 EC2 인스턴스 내부에서 배포한 이미지가 실행된다. 인스턴스는 들어오는 요청을 처리하고 CRUD 작업을 실행하며, RDS에 그 내용을 저장합니다.
+ 사용자 요청은 특정 Virtual Private Cloud(VPC) 경계의 ALB(Application Load Balancer)를 통해 ASG(Auto Scaling Group)에 들어갑니다. ASG는 Public Subnet 내에 위치해 있으며, ASG가 관리하는 EC2 인스턴스 내부에서 배포한 이미지가 실행된다. 인스턴스는 들어오는 요청을 처리하고 CRUD 작업을 실행하며, RDS에 그 내용을 저장합니다.
 
 **Fargate가 아닌 EC2를 사용한 이유**
 
@@ -77,7 +77,7 @@ API Gateway를 Lambda의 트리거로 연결하여 API 요청을 수신하고 �
 ### **5. DynamoDB Log** 
 ---
 
-사용자의 요청에 따른 결과 및 로그를 모두 Log DynamoDB에 저장하게 되고, DynamoDB에 로그가 쌓일 때마다 EventBridge에서 로그를 설정해둔 Rule에 따라 필터링되어 Lambda를 통해 로그가 사용자에게 SES로 전송됩니다. 
+ 사용자의 요청에 따른 결과 및 로그를 모두 Log DynamoDB에 저장하게 되고, DynamoDB에 로그가 쌓일 때마다 EventBridge에서 로그를 설정해둔 Rule에 따라 필터링되어 Lambda를 통해 로그가 사용자에게 SES로 전송됩니다. 
 
 **로그 저장소로 DynamoDB를 사용한 이유**
 
@@ -94,4 +94,5 @@ API Gateway를 Lambda의 트리거로 연결하여 API 요청을 수신하고 �
 <img width="1589" alt="KakaoTalk_20230628_110238378_01" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/e17b7e98-33ef-40de-8033-5af799f11fc2">
 <img width="1589" alt="KakaoTalk_20230628_110238378_02" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/d0cafc11-1315-429d-b555-9019acd4ea4c">
 로그인으로 사용자 인증을 통해 DB에서 Task의 현황을 가져온다.
+
 <br>
