@@ -16,7 +16,7 @@
 
 - 백엔드 개발:  **JavaScript (Node.js)**
 - 데이터베이스 관리:  **Amazon RDS (MySQL), DynamoDB**
-- 알림 시스템: **Amazon SNS, SMS**
+- 알림 시스템: **Amazon EventBridge, SES**
 - 컨테이너화: **Docker**
 - CI/CD 파이프라인: **GitHub Actions**
 - 모니터링: **CloudWatch 경보**
