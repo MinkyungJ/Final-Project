@@ -3,7 +3,7 @@
 <img width="1882" alt="스크린샷 2023-06-28 06 47 00" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/105037141/7818c955-8934-4d94-bacd-1ff8ffcebfda">
 
 프로젝트 발표자료
-(https://docs.google.com/presentation/d/1A6nd_WcityqFIknwzVEpzRsgm7nvGPgxpVvEOD_bmxo/edit?usp=drive_link)
+https://docs.google.com/presentation/d/1A6nd_WcityqFIknwzVEpzRsgm7nvGPgxpVvEOD_bmxo/edit?usp=drive_link
 
 # 기능 요구사항
 
