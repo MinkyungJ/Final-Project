@@ -36,8 +36,7 @@
 
 ### **1. 코드 수정 및 Image Push**
 ---
-Git Action은 GitHub 레포지토리의 코드가 수정될 때마다 빌드를 트리거해서 자동으로 각 코드들이 배포되어야할 리소스로 배포합니다. 구현한 CRUD 이미지는 Git Action이 자동으로 만들어둔 ECR(Elastic Container Registry)에 이미지를 Push합니다. 또한, Push된 이미지를 지정한 ECS의 서비스 내에 작업을 생성합니다.
-뿐만 아니라 로그인요청 처리코드와 로그이벤트 처리코드는 각각의 람다 함수로, 프론트 웹페이지 코드는 s3 버킷으로 배포됩니다.
+Git Action은 GitHub 레포지토리의 코드가 수정될 때마다 빌드를 트리거해서 자동으로 각 코드들이 배포되어야할 리소스로 배포합니다. 구현한 CRUD 이미지는 Git Action이 자동으로 만들어둔 ECR(Elastic Container Registry)에 이미지를 Push합니다. 또한, Push된 이미지를 지정한 ECS의 서비스 내에 작업을 생성합니다. 뿐만 아니라 로그인요청 처리코드와 로그이벤트 처리코드는 각각의 람다 함수로, 프론트 웹페이지 코드는 s3 버킷으로 배포됩니다.
 
 <br>
 
@@ -63,7 +62,7 @@ API Gateway를 Lambda의 트리거로 연결하여 API 요청을 수신하고 �
 ### **4. ALB 및 ASG** 
 ---
 
-사용자 요청은 특정 Virtual Private Cloud(VPC) 내의 ALB(Application Load Balancer)를 통해 ASG(Auto Scaling Group)에 들어갑니다. ASG는 Public Subnet 내에 위치해 있으며, ASG가 관리하는 EC2 인스턴스 내부에서 배포한 이미지가 실행된다. 인스턴스는 들어오는 요청을 처리하고 CRUD 작업을 실행하며, RDS에 그 내용을 저장합니다.
+사용자 요청은 특정 Virtual Private Cloud(VPC) 경계의 ALB(Application Load Balancer)를 통해 ASG(Auto Scaling Group)에 들어갑니다. ASG는 Public Subnet 내에 위치해 있으며, ASG가 관리하는 EC2 인스턴스 내부에서 배포한 이미지가 실행된다. 인스턴스는 들어오는 요청을 처리하고 CRUD 작업을 실행하며, RDS에 그 내용을 저장합니다.
 
 **Fargate가 아닌 EC2를 사용한 이유**
 
