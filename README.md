@@ -15,12 +15,11 @@
 # 필요한 리소스
 
 - 백엔드 개발:  **JavaScript (Node.js)**
-- 데이터베이스 관리:  **Amazon RDS (MySQL)**
-- 사용자 인증 및 권한 관리: **JWT(JSON Web Tokens)**
+- 데이터베이스 관리:  **Amazon RDS (MySQL), DynamoDB**
 - 알림 시스템: **Amazon SNS, SMS**
-- 컨테이너화: **Docker, Kubernetes**
+- 컨테이너화: **Docker**
 - CI/CD 파이프라인: **GitHub Actions**
-- 모니터링: **Prometheus, Grafana, CloudWatch 경보**
+- 모니터링: **CloudWatch 경보**
 
 
 # 인프라 요구사항
