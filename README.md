@@ -1,11 +1,4 @@
 # devops-04-Final-Team5
-## Hoonology.click
-<img width="1589" alt="KakaoTalk_20230628_110238378" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/42582658-cb2a-4074-bf6d-6a8d23a46d99">
-<img width="1589" alt="KakaoTalk_20230628_110238378_01" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/e17b7e98-33ef-40de-8033-5af799f11fc2">
-<img width="1589" alt="KakaoTalk_20230628_110238378_02" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/d0cafc11-1315-429d-b555-9019acd4ea4c">
-로그인으로 사용자 인증을 통해 DB에서 Task의 현황을 가져온다.
-<br>
-
 # 리소스 아키텍쳐
 <img width="1882" alt="스크린샷 2023-06-28 06 47 00" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/105037141/7818c955-8934-4d94-bacd-1ff8ffcebfda">
 
@@ -95,3 +88,10 @@ API Gateway를 Lambda의 트리거로 연결하여 API 요청을 수신하고 �
 - 구현한 아키텍처는 적은 양의 로그 데이터를 처리하기 때문에 처리 속도가 빠른 DynamoDB가 효과적일 것이라고 생각했다. 
 
 - DynamoDB는 AWS Lambda와 같은 이벤트 기반 처리 시스템과 잘 통합되어 실시간 로그 분석과 같은 복잡한 로그 처리 작업 또한 쉽게 구현할 수 있다.
+
+## Hoonology.click
+<img width="1589" alt="KakaoTalk_20230628_110238378" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/42582658-cb2a-4074-bf6d-6a8d23a46d99">
+<img width="1589" alt="KakaoTalk_20230628_110238378_01" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/e17b7e98-33ef-40de-8033-5af799f11fc2">
+<img width="1589" alt="KakaoTalk_20230628_110238378_02" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/d0cafc11-1315-429d-b555-9019acd4ea4c">
+로그인으로 사용자 인증을 통해 DB에서 Task의 현황을 가져온다.
+<br>
