@@ -4,6 +4,7 @@
 <img width="1589" alt="KakaoTalk_20230628_110238378_01" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/e17b7e98-33ef-40de-8033-5af799f11fc2">
 <img width="1589" alt="KakaoTalk_20230628_110238378_02" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/58872932/d0cafc11-1315-429d-b555-9019acd4ea4c">
 로그인으로 사용자 인증을 통해 DB에서 Task의 현황을 가져온다.
+<br>
 
 # 리소스 아키텍쳐
 <img width="1882" alt="스크린샷 2023-06-28 06 47 00" src="https://github.com/cs-devops-bootcamp/devops-04-Final-Team5/assets/105037141/7818c955-8934-4d94-bacd-1ff8ffcebfda">
