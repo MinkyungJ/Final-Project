@@ -36,8 +36,8 @@
 
 ### **1. 코드 수정 및 Image Push**
 ---
-
-구현한 CRUD 이미지는 코드를 수정할 때마다 Git Action이 빌드를 트리거하고 자동으로 만들어둔 ECR(Elastic Container Registry)에 이미지가 Push됩니다. 또한, Push된 이미지를 지정한 ECS의 서비스 내에 작업을 생성합니다.
+Git Action은 GitHub 레포지토리의 코드가 수정될 때마다 빌드를 트리거해서 자동으로 각 코드들이 배포되어야할 리소스로 배포합니다. 구현한 CRUD 이미지는 Git Action이 자동으로 만들어둔 ECR(Elastic Container Registry)에 이미지를 Push합니다. 또한, Push된 이미지를 지정한 ECS의 서비스 내에 작업을 생성합니다.
+뿐만 아니라 로그인요청 처리코드와 로그이벤트 처리코드는 각각의 람다 함수로, 프론트 웹페이지 코드는 s3 버킷으로 배포됩니다.
 
 <br>
 
