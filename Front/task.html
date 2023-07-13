@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            padding: 60px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #333333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+        }
+        
+        th {
+            background-color: rgb(24, 24, 86);
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Management</h1>
+    <table id="taskTable">
+        <tr>
+            <th>Task ID</th>
+            <th>Supervisor Email</th>
+            <th>PIC Email</th>
+            <th>Task Name</th>
+            <th>Task Contents</th>
+            <th>Task Status</th>
+            <th>Deadline</th>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://jeu65tbcz6.execute-api.ap-northeast-2.amazonaws.com/stage3/',
+                type: 'GET',
+                success: function(data) {
+                    $.each(data, function(index, task) {
+                        $('#taskTable').append('<tr><td>' + task.Task_id + '</td><td>' + task.Supervisor_email + '</td><td>' + task.PIC_email + '</td><td>' + task.Task_name + '</td><td>' + task.Task_contents + '</td><td>' + task.Task_status + '</td><td>' + task.Deadline + '</td></tr>');
+                    });
+                },
+                error: function() {
+                    alert('Error loading data');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
